@@ -1,0 +1,25 @@
+{
+  "name": "b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "ustar-svc": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && npm run build:test && node --test dist-test/test/tar.test.js dist-test/test/service.test.js",
+    "build:test": "tsc -p tsconfig.test.json",
+    "start": "node dist/cli.js serve",
+    "demo": "node dist/cli.js demo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  },
+  "test": "npm run build && npm run build:test && node --test dist-test/test/*.test.js"
+}
